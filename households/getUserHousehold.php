@@ -1,4 +1,5 @@
 <?php
+    require("../access-control.php");
     require("../db.php");
 
         try {

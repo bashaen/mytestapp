@@ -1,4 +1,5 @@
 <?php
+    header('Access-Control-Allow-Origin: *');
     require("../check-session.php");
     require("../db.php");
     $home_id = $_GET['homeId'];

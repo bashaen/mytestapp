@@ -1,4 +1,5 @@
 <?php
+    header('Access-Control-Allow-Origin: *');
     $home_id = $_GET["homeId"];
     require "../config.php";
     require("../db.php");

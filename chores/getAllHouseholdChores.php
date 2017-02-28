@@ -27,7 +27,7 @@
 		          AND homeck.chores_users.active = 1
 		          AND homeck.chores_users.completed = 1;");
     } catch (Exception $e) {
-        echo("Could not get Home");
+        echo("Could not get Home 1");
         exit;
     }
     $active_complete = $results->fetchAll(PDO::FETCH_ASSOC);
@@ -53,7 +53,7 @@
                         AND homeck.chores_users.active = 1
                         AND homeck.chores_users.completed = 0;");
     } catch (Exception $e) {
-        echo("Could not get Home");
+        echo("Could not get Home 2");
         exit;
     }
     $active_incomplete = $results->fetchAll(PDO::FETCH_ASSOC);
@@ -78,7 +78,7 @@
                             WHERE homeck.chores_users.home_id = $home_id
                             AND homeck.chores_users.active = 0");
     } catch (Exception $e) {
-        echo("Could not get Home");
+        echo("Could not get Home 3");
         exit;
     }
     $inactive_chores["all"] = $results->fetchAll(PDO::FETCH_ASSOC);

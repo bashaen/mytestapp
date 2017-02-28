@@ -9,22 +9,22 @@ $chores_active_inactive = [];
 try {
     $results = $db->query("
             SELECT
-                homeck.chores.chore_id as chore_id,
-                homeck.chores.title as chore_name,
-                homeck.chores_users.notes as notes,
-                homeck.chores_users.active as active,
-                homeck.chores_users.completed as completed,
-                homeck.chores_users.user_id as user_id,
-                homeck.users.firstName as chore_owner,
-                homeck.users.color as user_color
-            FROM homeck.chores_users
-	          INNER JOIN homeck.chores
-		        ON homeck.chores_users.chore_id = homeck.chores.chore_id
-	          INNER JOIN homeck.users
-		        ON homeck.chores_users.user_id = homeck.users.user_id
-		          WHERE homeck.chores_users.home_id = $home_id
-		          AND homeck.chores_users.active = 1
-		          AND homeck.chores_users.completed = 1;");
+                chores.chore_id as chore_id,
+                chores.title as chore_name,
+                chores_users.notes as notes,
+                chores_users.active as active,
+                chores_users.completed as completed,
+                chores_users.user_id as user_id,
+                users.firstName as chore_owner,
+                users.color as user_color
+            FROM chores_users
+	          INNER JOIN chores
+		        ON chores_users.chore_id = chores.chore_id
+	          INNER JOIN users
+		        ON chores_users.user_id = users.user_id
+		          WHERE chores_users.home_id = $home_id
+		          AND chores_users.active = 1
+		          AND chores_users.completed = 1;");
 } catch (Exception $e) {
     echo("Could not get Home");
     exit;
@@ -35,22 +35,22 @@ $chores_complete_incomplete["complete"] = $active_complete;
 try {
     $results = $db->query("
                 SELECT
-                    homeck.chores.chore_id as chore_id,
-                    homeck.chores.title as chore_name,
-                    homeck.chores_users.notes as notes,
-                    homeck.chores_users.active as active,
-                    homeck.chores_users.completed as completed,
-                    homeck.chores_users.user_id as user_id,
-                    homeck.users.firstName as chore_owner,
-                    homeck.users.color as user_color
-                FROM homeck.chores_users
-                    INNER JOIN homeck.chores
-                        ON homeck.chores_users.chore_id = homeck.chores.chore_id
-                    INNER JOIN homeck.users
-                        ON homeck.chores_users.user_id = homeck.users.user_id
-                        WHERE homeck.chores_users.home_id = $home_id
-                        AND homeck.chores_users.active = 1
-                        AND homeck.chores_users.completed = 0;");
+                    chores.chore_id as chore_id,
+                    chores.title as chore_name,
+                    chores_users.notes as notes,
+                    chores_users.active as active,
+                    chores_users.completed as completed,
+                    chores_users.user_id as user_id,
+                    users.firstName as chore_owner,
+                    users.color as user_color
+                FROM chores_users
+                    INNER JOIN chores
+                        ON chores_users.chore_id = chores.chore_id
+                    INNER JOIN users
+                        ON chores_users.user_id = users.user_id
+                        WHERE chores_users.home_id = $home_id
+                        AND chores_users.active = 1
+                        AND chores_users.completed = 0;");
 } catch (Exception $e) {
     echo("Could not get Home");
     exit;
@@ -61,21 +61,21 @@ $chores_complete_incomplete["incomplete"] = $active_incomplete;
 try {
     $results = $db->query("
                     SELECT
-                        homeck.chores.chore_id as chore_id,
-                        homeck.chores.title as chore_name,
-                        homeck.chores_users.notes as notes,
-                        homeck.chores_users.active as active,
-                        homeck.chores_users.completed as completed,
-                        homeck.chores_users.user_id as user_id,
-                        homeck.users.firstName as chore_owner,
-                        homeck.users.color as user_color
-                    FROM homeck.chores_users
-                        INNER JOIN homeck.chores
-                            ON homeck.chores_users.chore_id = homeck.chores.chore_id
-                        INNER JOIN homeck.users
-                            ON homeck.chores_users.user_id = homeck.users.user_id
-                            WHERE homeck.chores_users.home_id = $home_id
-                            AND homeck.chores_users.active = 0");
+                        chores.chore_id as chore_id,
+                        chores.title as chore_name,
+                        chores_users.notes as notes,
+                        chores_users.active as active,
+                        chores_users.completed as completed,
+                        chores_users.user_id as user_id,
+                        users.firstName as chore_owner,
+                        users.color as user_color
+                    FROM chores_users
+                        INNER JOIN chores
+                            ON chores_users.chore_id = chores.chore_id
+                        INNER JOIN users
+                            ON chores_users.user_id = users.user_id
+                            WHERE chores_users.home_id = $home_id
+                            AND chores_users.active = 0");
 } catch (Exception $e) {
     echo("Could not get Home");
     exit;

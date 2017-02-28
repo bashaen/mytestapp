@@ -2,7 +2,7 @@
     header('Access-Control-Allow-Origin: *');
     require("../check-session.php");
     require("../db.php");
-    $home_id = $_GET['homeId'];
+//    $home_id = $_GET['homeId'];
     $home_id = '1';
     $chores_complete_incomplete = [];
     $chores_active_inactive = [];

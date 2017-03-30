@@ -1,4 +1,5 @@
 <?php
+    header('Access-Control-Allow-Origin: *');
     require("../check-session.php");
     require("../db.php");
     $user_id = $_GET['user_id'];
@@ -13,4 +14,4 @@
     }
 
     $single_user = $results->fetch(PDO::FETCH_ASSOC);
-    echo(json_encode($single_user));
+    echo(json_encode( array( "data" => $single_user ) ) );

@@ -2,6 +2,7 @@
     $chore_id    = $_POST['choreId'];
     $user_id     = $_POST['userId'];
 
+
     require("../db.php");
 
     try {

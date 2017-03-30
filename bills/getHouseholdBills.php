@@ -1,5 +1,4 @@
 <?php
-    header('Access-Control-Allow-Origin: *');
     $home_id = $_GET["homeId"];
     require "../config.php";
     require("../db.php");
@@ -39,4 +38,4 @@
         }
     }
 
-    echo(json_encode((array) $bill_with_users));
+    echo(json_encode( array ( "data" => $bill_with_users)));

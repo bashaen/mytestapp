@@ -1,4 +1,5 @@
 <?php
+    header('Access-Control-Allow-Origin: *');
     session_start();
     if(isset($_POST['action']) && !empty($_POST['action'])) {
         $action = $_POST['action'];

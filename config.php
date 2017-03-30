@@ -1,5 +1,4 @@
 <?php
-    require("../access-control.php");
 
 // BASE-PATH VARIABLES
 define("BASE_URL", "/");

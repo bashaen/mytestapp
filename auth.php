@@ -1,4 +1,7 @@
 <?php
 session_start();
-$_SESSION['name'] = 'Maheshrew';
-echo json_encode(array('name' => $_SESSION));
+if ( isset( $_SESSION["user_id"] ) ) {
+    echo json_encode(array(data => $_SESSION));
+} else {
+    echo json_encode( array( data => array( "status" => "No Session" ) ) );
+}
